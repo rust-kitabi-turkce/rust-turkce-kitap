@@ -22,7 +22,7 @@ sunmak.
 - Sadece gerektiğinde `original/src/chXX-YY-*.md` dosyasını okuyup `src/chXX-YY-*.md`'ye Türkçe çevir. Çoğu zaman zaten çevirisi yapılacak dosyanın içinde orjinal metin olur.
   Kritik: `src/SUMMARY.md`'deki başlıkları da Türkçeye çevir (dosya adları ve
   sıralama DEĞİŞMEZ).
-- Her çeviriden sonra, o kısmın çevirisi tamamen bittiğinde `ceviri-durumu.md`'ye ekle
+- Her çeviriden sonra, o kısmın çevirisi tamamen bittiğinde `ceviri-durumu.md`'ye ekle. ceviri-durumu.md'de listelenen bölümler sıralı olmalı,
 - Bir bölümü çevirirken onun kod örneklerini de Türkçeye çevir. (listings klasörü altında). Kod örnekleri için kurallar aşağıda.
 
 ### ASLA ÇEVİRME / DOKUNMA
@@ -36,11 +36,15 @@ sunmak.
 - `<span class="filename">...</span>` içeriği (dosya adı kalır, etiket çevrilebilir)
 - URL'ler ve `[text](hedef)` bağlantılarının hedef kısmı (anchor'ların görünen metni çevrilir, hedef DEĞİŞMEZ)
 - `<img>` etiketlerinin `src`/`class` öznitelikleri (`alt` metni çevrilebilir)
+- Kod örneklerinde ve çıktılarda, Compilerın uyarılarını Türkçeye çevirme
 
 ### ÇEVİR
 
 - Düz anlatım metinleri, bölüm başlıkları (`#`, `##`), tablo metinleri, `<img alt="...">`
 - `src/SUMMARY.md` başlıkları (Türkçe, ama aynı sıra ve dosya adları)
+- Kitap, eğer kitapla ilgili bir link adresi referans verirse bu adresler ile değiştir
+- Kitap Adresi : https://rust-kitabi-turkce.github.io/rust-turkce-kitap/
+- Kitabın github reposu : https://github.com/rust-kitabi-turkce/rust-turkce-kitap
 
 ### KOD İÇİNDEKİ STRING ve YORUM ÇEVİRİSİ
 
