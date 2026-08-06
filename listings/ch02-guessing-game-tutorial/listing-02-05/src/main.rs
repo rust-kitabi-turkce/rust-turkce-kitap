@@ -4,14 +4,14 @@ use std::io;
 use rand::prelude::*;
 
 fn main() {
-    println!("Guess the number!");
+    println!("Sayıyı tahmin et!");
 
     let secret_number = rand::rng().random_range(1..=100);
 
-    println!("The secret number is: {secret_number}");
+    println!("Gizli sayı: {secret_number}");
 
     loop {
-        println!("Please input your guess.");
+        println!("Lütfen tahminini gir.");
 
         let mut guess = String::new();
 
@@ -20,7 +20,7 @@ fn main() {
 
         io::stdin()
             .read_line(&mut guess)
-            .expect("Failed to read line");
+            .expect("Satır okunamadı");
 
         // ANCHOR: ch19
         let guess: u32 = match guess.trim().parse() {
@@ -29,16 +29,16 @@ fn main() {
         };
         // ANCHOR_END: ch19
 
-        println!("You guessed: {guess}");
+        println!("Tahminin: {guess}");
 
         // --snip--
         // ANCHOR_END: here
 
         match guess.cmp(&secret_number) {
-            Ordering::Less => println!("Too small!"),
-            Ordering::Greater => println!("Too big!"),
+            Ordering::Less => println!("Çok küçük!"),
+            Ordering::Greater => println!("Çok büyük!"),
             Ordering::Equal => {
-                println!("You win!");
+                println!("Kazandın!");
                 break;
             }
         }
