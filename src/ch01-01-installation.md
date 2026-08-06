@@ -1,126 +1,126 @@
-## Installation
+## Kurulum
 
-The first step is to install Rust. We’ll download Rust through `rustup`, a
-command line tool for managing Rust versions and associated tools. You’ll need
-an internet connection for the download.
+İlk adım Rust'ı kurmak. Rust'ı, Rust sürümlerini ve ilgili araçları yöneten bir
+komut satırı aracı olan `rustup` aracılığıyla indireceğiz. İndirme için internet
+bağlantısına ihtiyacınız olacak.
 
-> Note: If you prefer not to use `rustup` for some reason, please see the
-> [Other Rust Installation Methods page][otherinstall] for more options.
+> Not: Herhangi bir nedenle `rustup` kullanmayı tercih etmezseniz, daha fazla
+> seçenek için [Diğer Rust Kurulum Yöntemleri sayfasına][otherinstall] bakın.
 
-The following steps install the latest stable version of the Rust compiler.
-Rust’s stability guarantees ensure that all the examples in the book that
-compile will continue to compile with newer Rust versions. The output might
-differ slightly between versions because Rust often improves error messages and
-warnings. In other words, any newer, stable version of Rust you install using
-these steps should work as expected with the content of this book.
+Aşağıdaki adımlar, Rust derleyicisinin en son kararlı sürümünü kurar. Rust'ın
+kararlılık garantileri, kitapta derlenen tüm örneklerin daha yeni Rust
+sürümleriyle derlenmeye devam edeceğini güvence altına alır. Rust hata
+mesajlarını ve uyarılarını sık sık iyileştirdiği için çıktı sürümler arasında
+biraz farklılık gösterebilir. Başka bir deyişle, bu adımları kullanarak
+kurduğunuz herhangi bir daha yeni, kararlı Rust sürümü bu kitabın içeriğiyle
+beklendiği gibi çalışmalıdır.
 
-> ### Command Line Notation
+> ### Komut Satırı Gösterimi
 >
-> In this chapter and throughout the book, we’ll show some commands used in the
-> terminal. Lines that you should enter in a terminal all start with `$`. You
-> don’t need to type the `$` character; it’s the command line prompt shown to
-> indicate the start of each command. Lines that don’t start with `$` typically
-> show the output of the previous command. Additionally, PowerShell-specific
-> examples will use `>` rather than `$`.
+> Bu bölümde ve kitap boyunca terminalde kullanılan bazı komutları
+> göstereceğiz. Terminale girmeniz gereken satırların tümü `$` ile başlar. `$`
+> karakterini yazmanıza gerek yok; o, her komutun başlangıcını göstermek için
+> görüntülenen komut satırı istemidir. `$` ile başlamayan satırlar genellikle
+> önceki komutun çıktısını gösterir. Ayrıca PowerShell'e özgü örnekler `$`
+> yerine `>` kullanır.
 
-### Installing `rustup` on Linux or macOS
+### Linux veya macOS'ta `rustup` Kurulumu
 
-If you’re using Linux or macOS, open a terminal and enter the following command:
+Linux veya macOS kullanıyorsanız bir terminal açın ve şu komutu girin:
 
 ```console
 $ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 ```
 
-The command downloads a script and starts the installation of the `rustup`
-tool, which installs the latest stable version of Rust. You might be prompted
-for your password. If the install is successful, the following line will appear:
+Bu komut bir betiği indirir ve Rust'ın en son kararlı sürümünü kuran `rustup`
+aracının kurulumunu başlatır. Şifreniz istenebilir. Kurulum başarılı olursa
+aşağıdaki satır görünecektir:
 
 ```text
 Rust is installed now. Great!
 ```
 
-You will also need a _linker_, which is a program that Rust uses to join its
-compiled outputs into one file. It is likely you already have one. If you get
-linker errors, you should install a C compiler, which will typically include a
-linker. A C compiler is also useful because some common Rust packages depend on
-C code and will need a C compiler.
+Ayrıca bir _linker_'a ihtiyacınız olacak. Linker, Rust'ın derlenmiş çıktılarını
+tek bir dosyada birleştirmek için kullandığı bir programdır. Muhtemelen zaten
+birine sahipsiniz. Linker hataları alırsanız, genellikle bir linker içeren bir C
+derleyicisi kurmalısınız. C derleyicisi de kullanışlıdır çünkü bazı yaygın Rust
+paketleri C koduna bağımlıdır ve bir C derleyicisine ihtiyaç duyar.
 
-On macOS, you can get a C compiler by running:
+macOS'ta şu komutu çalıştırarak bir C derleyicisi edinebilirsiniz:
 
 ```console
 $ xcode-select --install
 ```
 
-Linux users should generally install GCC or Clang, according to their
-distribution’s documentation. For example, if you use Ubuntu, you can install
-the `build-essential` package.
+Linux kullanıcıları, dağıtımlarının belgelerine göre genellikle GCC veya Clang
+kurmalıdır. Örneğin, Ubuntu kullanıyorsanız `build-essential` paketini
+kurabilirsiniz.
 
-### Installing `rustup` on Windows
+### Windows'ta `rustup` Kurulumu
 
-On Windows, go to [https://www.rust-lang.org/tools/install][install]<!-- ignore
---> and follow the instructions for installing Rust. At some point in the
-installation, you’ll be prompted to install Visual Studio. This provides a
-linker and the native libraries needed to compile programs. If you need more
-help with this step, see
-[https://rust-lang.github.io/rustup/installation/windows-msvc.html][msvc]<!--
-ignore -->.
+Windows'ta [https://www.rust-lang.org/tools/install][install]<!-- ignore -->
+adresine gidin ve Rust'ı kurma talimatlarını izleyin. Kurulumun bir noktasında
+Visual Studio'yu kurmanız istenecek. Bu, programları derlemek için gereken
+linker'ı ve yerel kütüphaneleri sağlar. Bu adımda daha fazla yardıma ihtiyacınız
+olursa [https://rust-lang.github.io/rustup/installation/windows-msvc.html][msvc]<!--
+ignore --> adresine bakın.
 
-The rest of this book uses commands that work in both _cmd.exe_ and PowerShell.
-If there are specific differences, we’ll explain which to use.
+Bu kitabın geri kalanı hem _cmd.exe_ hem de PowerShell'de çalışan komutlar
+kullanır. Belirli farklılıklar varsa hangisini kullanacağınızı açıklayacağız.
 
-### Troubleshooting
+### Sorun Giderme
 
-To check whether you have Rust installed correctly, open a shell and enter this
-line:
+Rust'ın doğru kurulup kurulmadığını kontrol etmek için bir kabuk açın ve şu
+satırı girin:
 
 ```console
 $ rustc --version
 ```
 
-You should see the version number, commit hash, and commit date for the latest
-stable version that has been released, in the following format:
+Yayınlanmış en son kararlı sürümün sürüm numarasını, commit hash'ini ve commit
+tarihini şu biçimde görmelisiniz:
 
 ```text
 rustc x.y.z (abcabcabc yyyy-mm-dd)
 ```
 
-If you see this information, you have installed Rust successfully! If you don’t
-see this information, check that Rust is in your `%PATH%` system variable as
-follows.
+Bu bilgiyi görüyorsanız Rust'ı başarıyla kurmuşsunuz demektir! Bu bilgiyi
+göremiyorsanız Rust'ın `%PATH%` sistem değişkeninizde olup olmadığını şu şekilde
+kontrol edin.
 
-In Windows CMD, use:
+Windows CMD'de şunu kullanın:
 
 ```console
 > echo %PATH%
 ```
 
-In PowerShell, use:
+PowerShell'de şunu kullanın:
 
 ```powershell
 > echo $env:Path
 ```
 
-In Linux and macOS, use:
+Linux ve macOS'ta şunu kullanın:
 
 ```console
 $ echo $PATH
 ```
 
-If that’s all correct and Rust still isn’t working, there are a number of
-places you can get help. Find out how to get in touch with other Rustaceans (a
-silly nickname we call ourselves) on [the community page][community].
+Her şey doğruysa ve Rust hâlâ çalışmıyorsa yardım alabileceğiniz birçok yer
+var. Diğer Rustacean'larla (kendimize taktığımız şakacı bir takma ad) nasıl
+iletişime geçeceğinizi [topluluk sayfasında][community] öğrenin.
 
-### Updating and Uninstalling
+### Güncelleme ve Kaldırma
 
-Once Rust is installed via `rustup`, updating to a newly released version is
-easy. From your shell, run the following update script:
+`rustup` ile Rust kurulduktan sonra, yeni yayınlanan bir sürüme güncelleme
+yapmak kolaydır. Kabuğunuzdan şu güncelleme betiğini çalıştırın:
 
 ```console
 $ rustup update
 ```
 
-To uninstall Rust and `rustup`, run the following uninstall script from your
-shell:
+Rust'ı ve `rustup`'ı kaldırmak için kabuğunuzdan şu kaldırma betiğini
+çalıştırın:
 
 ```console
 $ rustup self uninstall
@@ -129,34 +129,35 @@ $ rustup self uninstall
 <!-- Old headings. Do not remove or links may break. -->
 <a id="local-documentation"></a>
 
-### Reading the Local Documentation
+### Yerel Belgeleri Okuma
 
-The installation of Rust also includes a local copy of the documentation so
-that you can read it offline. Run `rustup doc` to open the local documentation
-in your browser.
+Rust kurulumu, belgelerin yerel bir kopyasını da içerir; böylece onları
+çevrimdışı okuyabilirsiniz. Yerel belgeleri tarayıcınızda açmak için
+`rustup doc` komutunu çalıştırın.
 
-Any time a type or function is provided by the standard library and you’re not
-sure what it does or how to use it, use the application programming interface
-(API) documentation to find out!
+Standart kütüphane tarafından sağlanan bir türün veya fonksiyonun ne yaptığından
+ya da nasıl kullanılacağından emin değilseniz, öğrenmek için uygulama
+programlama arayüzü (API) belgelerini kullanın!
 
 <!-- Old headings. Do not remove or links may break. -->
 <a id="text-editors-and-integrated-development-environments"></a>
 
-### Using Text Editors and IDEs
+### Metin Editörleri ve IDE'leri Kullanma
 
-This book makes no assumptions about what tools you use to author Rust code.
-Just about any text editor will get the job done! However, many text editors and
-integrated development environments (IDEs) have built-in support for Rust. You
-can always find a fairly current list of many editors and IDEs on [the tools
-page][tools] on the Rust website.
+Bu kitap, Rust kodu yazmak için hangi araçları kullandığınız hakkında hiçbir
+varsayımda bulunmaz. Hemen hemen her metin editörü işi görür! Ancak birçok metin
+editörü ve tümleşik geliştirme ortamının (IDE) Rust için yerleşik desteği
+vardır. Rust web sitesindeki [araçlar sayfasında][tools] birçok editörün ve
+IDE'nin güncel bir listesini her zaman bulabilirsiniz.
 
-### Working Offline with This Book
+### Bu Kitapla Çevrimdışı Çalışma
 
-In several examples, we will use Rust packages beyond the standard library. To
-work through those examples, you will either need to have an internet connection
-or to have downloaded those dependencies ahead of time. To download the
-dependencies ahead of time, you can run the following commands. (We’ll explain
-what `cargo` is and what each of these commands does in detail later.)
+Birçok örnekte standart kütüphanenin ötesinde Rust paketleri kullanacağız. Bu
+örnekler üzerinde çalışmak için ya internet bağlantınızın olması ya da bu
+bağımlılıkları önceden indirmiş olmanız gerekir. Bağımlılıkları önceden
+indirmek için aşağıdaki komutları çalıştırabilirsiniz. (`cargo`'nun ne olduğunu
+ve bu komutların her birinin ne yaptığını daha sonra ayrıntılı olarak
+açıklayacağız.)
 
 <!-- When updating the version of `rand` used, also update the version of
 `rand` used in these files so they all match:
@@ -172,11 +173,11 @@ $ cd get-dependencies
 $ cargo add rand@0.10.1 trpl@0.2.0
 ```
 
-This will cache the downloads for these packages so you will not need to
-download them later. Once you have run this command, you do not need to keep the
-`get-dependencies` folder. If you have run this command, you can use the
-`--offline` flag with all `cargo` commands in the rest of the book to use these
-cached versions instead of attempting to use the network.
+Bu, bu paketlerin indirmelerini önbelleğe alır, böylece daha sonra onları tekrar
+indirmeniz gerekmez. Bu komutu çalıştırdıktan sonra `get-dependencies`
+klasörünü tutmanız gerekmez. Bu komutu çalıştırdıysanız, kitabın geri
+kalanındaki tüm `cargo` komutlarında ağa erişmeye çalışmak yerine bu önbelleğe
+alınmış sürümleri kullanmak için `--offline` bayrağını kullanabilirsiniz.
 
 [otherinstall]: https://forge.rust-lang.org/infra/other-installation-methods.html
 [install]: https://www.rust-lang.org/tools/install

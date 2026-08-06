@@ -16,3 +16,8 @@ Birkaç topluluk [çevirisi][translations] de mevcuttur.
 
 Bu metin [No Starch Press'ten karton kapak ve e-kitap biçiminde][nsprust]
 edinilebilir.
+
+[install]: ch01-01-installation.html
+[appendix-e]: appendix-05-editions.html
+[nsprust]: https://nostarch.com/rust-programming-language-3rd-edition
+[translations]: appendix-06-translation.html
